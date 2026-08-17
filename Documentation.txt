@@ -1,0 +1,617 @@
+Jebasingh Joshua – Systems & Learning Architect
+Overview
+I build complete systems across domains – web applications, learning frameworks, game mechanics, and narrative structures. My approach combines first-principles thinking, AI orchestration, and a unique fragment-based learning methodology. I don't specialize; I synthesize.
+I am currently pursuing my B.E CSE(Cyber Security) degree in Prince Dr. K Vausdevan College of Engineering and Technology and I am currently moving on to my second year.
+Actively learning concepts after learning them from college and improving on them and using AI later to get work done faster.
+GitHub Profile Links:https://github.com/jebasinghjoshua24.
+Linkedin Profile:https://www.linkedin.com/in/jebasingh-joshua-j-440851386/
+
+Major GitHub Repo Links:
+1. https://github.com/jebasinghjoshua24/TIME-CAPSULE
+2. https://github.com/jebasinghjoshua24/PASSWORD_SECURITY_VAULT
+3. https://github.com/jebasinghjoshua24/LIBRARY-MANAGEMENT-SYSTEM
+4. https://github.com/jebasinghjoshua24/PASSWORD_STRENGTH_CHECKER
+
+1. Digital Time Capsule – Live Web App
+Status: ✅ Deployed (https://magical-granita-e9f978.netlify.app)
+Tech: HTML, CSS, JavaScript (vanilla), localStorage
+Timeline: 3 months (self-directed)
+
+Core Features
+Feature	Description
+User authentication	Signup, login, session management
+Role-based access	Admin vs regular users
+Time‑locked capsules	Set future unlock dates
+Self‑destruct mechanism	3 premature attempts → capsule destroyed
+Meme protection	Funny images shown on early access
+Friend system	Send/accept/reject, collaborative capsules
+Admin dashboard	User management, bans, investigation logs
+Activity logging	Full audit trail
+Backup/restore	Manual backups, restore functionality
+Dark mode	System‑preference driven
+Why It Matters
+Complete product – not a tutorial clone
+
+Security built-in – ban system, brute force protection, input sanitization
+
+Game mechanics – self‑destruct, penalty days (planned)
+
+Full backend migration started (Node.js + Express + SQLite) — see Section 6
+
+2. Fragment Method – A Universal Learning Framework
+Status: ✅ Designed, tested on self, documented
+Domain‑independent: Works for coding, biology, physics, languages
+
+Core Principle
+Knowledge is nested fragments (like atoms). Learn by recognizing patterns across fragments, not memorizing isolated facts.
+
+The 7‑Step Process
+Step	Action	Example (JavaScript .map())
+1	Keyword + syntax	.map(callback) transforms array elements
+2       Example for what input is given for what output          .map(array) -> array 
+3	Input / output only	Input [1,2,3] → output [2,4,6]
+4	Learner finds logic	Writes own implementation
+5	Compare with optimal	Sees why native method is better
+6	Understand why	Discovers underlying principle (immutability, efficiency)
+7	Debug combined concepts	Fixes broken code mixing map, filter, reduce
+Why It Works
+Active construction – not passive reading
+
+Pattern recognition – transferable across domains
+
+Error‑driven – mistakes become learning opportunities
+
+AI‑compatible – instant validation, infinite practice problems
+
+Claim
+A programmer who knows one language (e.g., Python) can learn another (e.g., Java) in 2 weeks using the Fragment Method.
+
+3. Escape Room Security System (Planned)
+Status: 🟡 Designed, not yet built
+Purpose: Replace meme modal with interactive game for early capsule access
+
+Game Mechanics
+Element	Description
+4 doors, 1 vault	Maze navigation
+Guard patrol system	AI movement, collision detection
+Lock‑pick minigame	Timed button presses / pattern matching
+Indirect riddles	Clues derived from answers
+3‑digit code entry	Final vault challenge
+Penalty days	Wrong code or timeout adds days to unlock date
+10‑minute timer	Urgency mechanic
+Why This Is Valuable
+Gamification of security – turns restriction into engagement
+
+Systems thinking – integrates patrol AI, timer, penalty logic, state persistence
+
+Portfolio standout – no other intern has built an escape room inside a web app
+
+4. 60,000‑Word Fanfiction – The Sacrifice
+Status: ✅ Complete (6 chapters + 7 epilogues.)
+Published: Weekly on Reddit (Chapter 2 live)
+Source: The Devil Is a Part‑Timer! (fan continuation)
+
+Key Arcs
+Character	Arc
+Emi	Memory loss after sacrifice, gradual recovery
+Maou	Realization of love, confession, wedding
+Chiho	Letting go of Maou, finding Yuki (bookstore guy)
+Ashiya	Choosing mortality to grow old with Rika
+Rika	Human‑demon relationship, aging together
+Suzuno & Urushihara	Priestess + fallen angel, slow domesticity
+Alas Ramus	Final epilogue from her perspective
+Thematic Critique (Posted on Reddit)
+"Maou becoming human means Emi and Alas Ramus will outlive him by centuries. The author gave Maou a 'normal' life but created a quiet tragedy for his immortal family."
+
+This analysis received engagement and sparked discussion.
+
+5. AI usage (Learned by using AI)
+Status: Actively learning to use and build projects.
+
+After making many projects with the assistance of AI by using it to generate boilerplate of code. I started to split the tasks between multiple chat's and giving each chat a specific specialized job to do and not think of other things.
+
+This has made the process of using AI and making projects faster and helps me not run into too much bugs and error while I make projects.
+I currently have 4 - 5 deepseek chat's open for a single project.
+
+1. Project scope(Planner) - This chat is used to plan the project and features and use it to brainstorm ideas and also limit the scope as to not overwhelm myself by big projects.
+2. Idea Challenger - This chat is used to challenge my idea and see from user prespectives and gather data to help me take care of problems users may run into and also check for pros and cons of a project idea.
+3. The coder - This chat is used to code the boilerplate of the project so I can start on coding and not spend time on boilerplate.
+4. The bug finder - This chat is used to find the bugs in the code and also to suggest better ways to optimize to make time less and also write clean code. It generates a summary and tells what to change and what to keep.
+
+6. Backend Learning Journey (Node.js + Express + SQLite)
+Start Date: 20 June 2026
+Status: 🟢 Backend API complete (auth, capsules, bans, friends, notifications, activity log, admin routes)
+
+This section documents my first backend build — every error, concept, and fix in real time.
+
+Day 1 — 20 June 2026
+─────────────────────
+
+Setup:
+• Created server/ directory, ran npm init
+• Installed express, better-sqlite3, bcryptjs, jsonwebtoken, cors, dotenv
+• First server.js attempt was written by AI; I deleted it and rewrote from scratch to learn
+
+Database (SQLite):
+• Created users, capsules, bans tables
+• Error: Wrote IF NOT EXIST (missing S) → SQLite refused to create table
+  Consequence if left: Server starts but users table never created. Every signup/login returns "no such table" error. Whole app broken silently.
+• Error: datetime('now) missing closing quote → SQL syntax error
+  Consequence if left: Same as above — the entire db.exec() fails, NO tables are created at all.
+• Error: datetime('now)) extra parenthesis → same error
+  Consequence if left: Same as above.
+• Fix: Proofread SQL carefully, matching quotes and parentheses
+
+Signup Route:
+• Error: Wrote bcrypt(hashSync(password, 10)) instead of bcrypt.hashSync(password, 10)
+  Consequence if left: Node crashes on signup — "hashSync is not defined". Every signup attempt fails. Users cannot register.
+• Fix: Used dot notation (bcrypt.hashSync) — the method belongs to the bcrypt object
+
+Learned: bcrypt is a one-way hash designed for passwords. The 10 is cost factor (higher = slower = harder to crack).
+
+Login Route:
+• Added ban check before returning JWT token — banned users get 403 even with valid password
+  Consequence if left: Banned users log in normally, then wonder why they can't view capsules. No feedback given about ban status.
+• Learned: JWT is stateless auth. Token carries { id, username, isAdmin }. Server never stores sessions.
+
+HTTP Status Codes:
+• 400 = bad request (missing fields)
+• 401 = authentication failed (wrong password)
+• 403 = forbidden (banned, not admin)
+• 404 = not found
+• 409 = conflict (duplicate username)
+• 201 = created successfully
+
+Route Path Bug:
+• Error: Wrote app.post('api/ban') without leading /
+  Consequence if left: Browser sends POST to /api/api/ban or api/ban (depends on page). Server never responds. Admin thinks ban is broken. 403 "Admin access required" is never reached.
+• Fix: Every route must start with / like '/api/ban'
+• This pattern repeated across 3 different routes before I internalized it
+
+Capsule CRUD:
+• Error: Used .get() instead of .all() on search
+  Consequence if left: Only 1 user ever appears in search results — the first match alphabetically. Users think the app is broken when their friend doesn't show up.
+• Fix: .all() returns all matching rows, .get() returns first row only
+• Error: Wrote db.prepare().add()
+  Consequence if left: Node crashes with "add is not a function". Capsules page loads nothing.
+• Error: Used .run(capsule) passing whole object instead of .run(req.params.id)
+  Consequence if left: SQLite tries to insert the word "[object Object]" into the WHERE clause. Query either fails or deletes nothing. Capsule never gets deleted.
+• Error: UPDATE capsules SET isArchived = ? without WHERE clause
+  Consequence if left: Every capsule in the database gets archived/unarchived at once. User opens their capsule list and sees 0 capsules (all archived) or all unarchived. Mass data corruption.
+• Fix: Always include WHERE id = ? on UPDATE/DELETE
+
+Column Placement Bug:
+• Error: Added isArchived, isFavorite, isPinned columns inside the bans table by mistake
+  Consequence if left: Capsules table never gets these columns. Creating a capsule with isArchived: 1 still saves it as readable. The archive/favorite/pin APIs all fail with "no such column" because the UPDATE is targeting the wrong table.
+• Fix: Moved them to the capsules CREATE TABLE where they belonged
+
+Variable Name Bugs:
+• Error: Destructured userID (capital D) but used userId (lowercase d) later
+  Consequence if left: userId is undefined, so the if(!userId) check always triggers. Route always returns 400 "userId is required". Ban route never works. Admin thinks bans are broken.
+• Error: Wrote capsule.isArchived as capsules.isArchived (plural)
+  Consequence if left: "Cannot read property isArchived of undefined" — crash on archive. Every archive attempt fails.
+• Error: Wrote DELETE FROM bands instead of bans
+  Consequence if left: "no such table: bands" — unban returns 500 error. Admins cannot unban users.
+• Fix: Consistent naming — userId everywhere, singular capsule, double-check table names
+
+Edit Route:
+• Error: Destructured req.params.id as const { capsule }
+  Consequence if left: capsule is undefined. The if(!capsule) check triggers. Route always returns 404 "Capsule not found" even if it exists. No capsule can ever be edited.
+• Fix: const capsuleId = req.params.id or just use req.params.id directly
+• Error: Used 401 for missing title → should be 400
+  Consequence if left: Frontend receives 401, interprets it as "you need to log in" and redirects to login page. User loses their form data. Very confusing UX.
+• Fix: 400 = client sent bad data, 401 = not logged in
+
+Frontend Integration:
+• Created api.js helper to centralize Authorization header + JSON handling
+• Updated handleSignUp and handleLogin to call API via fetch() instead of localStorage
+• Updated initializeCapsules() to fetch capsules from server on page load (added async)
+• handleCreateCapsule: initially forgot to mark function async
+  Consequence if left: "await is only valid in async function" — SyntaxError at runtime. Capsule creation never works. Button click does nothing (no error shown to user if uncaught).
+• Learned: All functions using await must be declared async.
+• Also: api.post without await starts the request but doesn't wait for the response. Capsule shows in the list 0.5s later (when the response finally arrives and renderAll fires) or never. Creates race conditions.
+
+Query Parameters:
+• /api/users/search?q=jebas — the ?q= part is a query parameter
+• req.query.q reads it from the URL
+• SQL LIKE '%jebas%' matches usernames containing "jebas" anywhere
+• % are SQL wildcards
+
+Key Security Concepts Learned:
+• SQL injection: ? placeholders in prepared statements prevent it — values are treated as data, never SQL code
+• bcrypt: adaptive hashing — slow by design, automatic salting
+• JWT expiry: tokens expire in 7 days, limited window if stolen
+• Generic error messages: Same "Invalid username or password" for both wrong user and wrong pass — prevents username enumeration
+• Never send password hash to client
+• .env file: secrets stored outside code, .gitignore prevents commits
+Day 2 — 21 June 2026
+─────────────────────
+
+Friend API Routes (complete):
+
+Accept Route (/api/friends/accept):
+• Takes sender's userId from req.body
+• Finds pending row WHERE userId1 = sender AND userId2 = current user
+• Updates status to 'accepted'
+• Error: Wrote route that created a new row instead of updating the pending one — would create duplicate relationships
+  Consequence if left: Two rows for the same friendship (one 'pending', one 'accepted'). Confuses the list query. Duplicates everywhere.
+• Error: Used userId variable without declaring it → ReferenceError crash
+• Error: Checked both directions in UPDATE but only one direction had the pending status — OR without parentheses mangled SQL logic
+• Error: if(existing) returned "No pending request" — logic inverted, should be if(!existing)
+• Fix: SELECT the pending request first, capture its id, UPDATE WHERE id = ?
+• Learned: A friend request system is two-step — INSERT a pending row, then UPDATE it on accept. Don't INSERT a second row.
+
+Decline Route (/api/friends/decline):
+• Same validation as accept but DELETEs the pending row instead of updating
+• Error: SQL had double WHERE clause (WHERE WHERE) — DELETE syntax error
+  Consequence if left: "SQLITE_ERROR: near WHERE" — 500 error on every decline. No request can be declined.
+• Error: Message said "accepted" instead of "declined" — copy-paste leftover
+• Fix: Single WHERE, corrected messages
+
+Remove Friend Route (/api/friends/remove):
+• Takes friend's userId from body, deletes approved row between both users
+• Error: Used accepted as unquoted variable instead of string 'accepted' — ReferenceError
+  Consequence if left: "accepted is not defined" — server crashes on every remove. Nobody can unfriend anyone.
+• Error: Operator precedence — AND bound tighter than OR, so status filter only applied to second half of OR pair
+  Consequence if left: Pending requests could be deleted. Users could silently cancel incoming requests without accepting first.
+• Error: DELETE ... WHERE id = ? OR id = ? with userId as second value — userId is not a row id
+  Consequence if left: Tries to delete a row whose primary key matches a user ID. Either no row deleted (silent fail) or wrong row deleted.
+• Fix: Proper parentheses ((A OR B) AND status), string 'accepted', delete by existing.id only
+
+Learned: AND binds tighter than OR in SQL. Always parenthesize OR pairs: ((cond1 OR cond2) AND cond3).
+
+Friend List Route (/api/friends/list):
+• GET route, finds all approved rows where current user is userId1 or userId2
+• Maps over rows, finds the friend's ID (the one that isn't the current user), looks up their username/avatar
+• Returns { friends: [ { id, username, avatar, since }, ... ] }
+• Error: Used WHERE id = ? — id is the row's primary key, not a user column
+  Consequence if left: Looking for a row whose row number matches a user ID string. Never matches. Always returns empty list.
+• Error: Used .get() instead of .all() — returns only 1 friend
+• Error: Mapped over undefined friends variable instead of query result
+  Consequence if left: "Cannot read property map of undefined" — crash on page load.
+• Fix: Two-step — query rows with .all(), then .map() over the rows array
+
+Learned: Friends list needs a JOIN-like reshape — raw rows have userId1/userId2, but the frontend needs { username, avatar, since }. The ternary (f.userId1 === me ? f.userId2 : f.userId1) picks the friend's ID.
+
+Concepts Reinforced:
+• UPDATE existing rows instead of INSERT for accept/decline workflows
+• .get() vs .all() — singular vs plural results
+• SQL operator precedence — ((A OR B) AND C) not (A OR B AND C)
+• Reshaping DB rows before sending to frontend — raw data ≠ API response
+
+Frontend Friend Conversion (users.js + userbase.js):
+
+loadFriends():
+• Changed from localStorage reads to GET /api/friends/list with await
+• Splits API response into friends (status === 'accepted') and friendRequests (status === 'pending')
+• Error: api.get() returns { friends: [...] } but code treated response directly as array
+  Consequence if left: storedFriends.friends is undefined. Both friend lists empty. UI shows "No friends".
+• Error: Used const friends = ... instead of reassigning global — shadowed the global variable
+  Consequence if left: Render functions use the global friends array (still empty). UI shows no friends despite successful API call.
+• Fix: Access storedFriends.friends, remove const to reassign globals
+• Learned: api.get() returns the full JSON response object, not the array directly
+
+sendFriendRequest():
+• Changed from local user search + localStorage push to API-based flow
+• GET /api/users/search?q= to find user, then POST /api/friends/request to send
+• Error: Removed api.post() call entirely — searched user but never sent the request
+  Consequence if left: Click "Add Friend" does nothing after finding the user. Friend request never created.
+• Error: Built manual request object (id, fromUserId, etc.) — server handles that
+• Fix: Search via API, call POST with { userId: friend.id }, let server create the row
+• Removed saveFriends() — was overwriting server data with stale localStorage
+
+acceptFriendRequest() / declineFriendRequest():
+• Changed from localStorage find/update to POST /api/friends/accept and POST /api/friends/decline
+• Error: request[0] instead of request.id — treated object as array
+  Consequence if left: Sends undefined as userId. Server returns "userId is required". Accept never works.
+• Error: Used request.fromUserId — API returns { id, username, direction, status }, not fromUserId
+  Consequence if left: Sends undefined. Server returns "No pending request" or crashes.
+• Fix: Use request.id (the friend's user ID) and request.username for toast messages
+
+cancelFriendRequest():
+• Reused decline route by enabling both-direction check: ((userId1 = ? AND userId2 = ?) OR (userId1 = ? AND userId2 = ?)) AND status = 'pending'
+• Now either party can decline/cancel a pending request
+
+ub_* functions (userbase.js):
+• All 5 functions converted to same patterns: confirmSendRequest, ub_acceptFriendRequest, ub_declineFriendRequest, ub_cancelFriendRequest, ub_removeFriend
+• Error: ub_removeFriend called /api/friends/decline with raw userId instead of /api/friends/remove with { userId }
+  Consequence if left: Wrong route, wrong format. Remove silently fails. Friends can never be unfriended.
+• Fix: Correct route and body format
+
+Edit Limit Feature:
+• Added editCount and editLocked columns to capsules table
+• PUT /api/capsules/:id now checks editLocked at start — returns 403 if locked
+• UPDATE increments editCount = editCount + 1 and sets editLocked via CASE WHEN editCount + 1 >= 3
+• Error: Used AND between SET clauses instead of comma — SQL syntax error
+  Consequence if left: "SQLITE_ERROR: near AND" — all edit attempts fail with 500 error.
+• Fix: SQL uses commas to separate SET assignments, not AND
+
+Friends Table Schema:
+• Added CREATE TABLE IF NOT EXISTS friends (id, userId1, userId2, status, createdAt) with foreign keys
+• Error: Missing comma after status TEXT column — SQL syntax error
+  Consequence if left: "SQLITE_ERROR: near createdAt" — db.exec() fails. No tables created at all.
+• Fix: Add comma before createdAt
+
+Capsule Frontend Conversion (capsules.js):
+
+editCapsule():
+• Added api.put() method to api.js
+• Save handler now calls PUT /api/capsules/:id then re-fetches from server
+• Error: URL had /:${capsule} (object) instead of /${capsuleId} (string ID) + stray colon
+  Consequence if left: Sends "undefined" or "[object Object]" in URL. Route never matches. 404 on every save.
+• Fix: Use ${capsuleId} without colon
+
+deleteOwnCapsule():
+• Added api.delete() method to api.js
+• Confirm handler now calls DELETE /api/capsules/:id then re-fetches
+
+toggleFavorite() / togglePin() / archiveCapsule():
+• Added api.patch() method to api.js
+• Each calls the corresponding PATCH endpoint then re-fetches
+• Error: togglePin URL had /pinned (wrong) and missing async keyword
+  Consequence if left: Route never matches. 404 on pin. Server has /pin, not /pinned.
+• Error: Used capsuleId.isPinned (string) instead of currentCapsule.capsule.isPinned (response nesting)
+  Consequence if left: String has no isPinned property. Toast always shows "Capsule unpinned".
+• Fix: Correct URL, correct response path
+• archiveCapsule and unarchiveCapsule merged into one — server /archive toggles both ways
+
+Concepts Reinforced:
+• Frontend API calls need async/await everywhere in the chain
+• API response shape matters — { friends: [...] } not [...] directly
+• PUT/DELETE/PATCH need their own methods in the api helper
+• When migrating from localStorage to API, remove old save functions (saveToStorage, saveFriends) to avoid overwriting server data
+• Server returns nested responses like { capsule: { ... } } — access through the wrapper
+
+Day 3 — 23 June 2026
+─────────────────────
+
+Notifications Table + Routes:
+• Added CREATE TABLE IF NOT EXISTS notifications (id, userId, type, message, read, timestamp)
+• Error: AUTO INCREMENT with space instead of AUTOINCREMENT — SQL syntax error
+  Consequence if left: "SQLITE_ERROR: near INCREMENT" — db.exec() fails, no tables created.
+• Error: Missing semicolon after friends table — next CREATE TABLE never parsed correctly
+  Consequence if left: Friends table might not be created, causing "no such table: friends" errors.
+• Fix: AUTOINCREMENT as one word, add missing semicolons
+
+GET /api/notifications with filter:
+• Returns user's notifications ordered by timestamp DESC
+• Accepts ?filter=unread or ?filter=read query param
+• Error: Used const inside if/else blocks — variable out of scope for res.json()
+  Consequence if left: notifications is undefined on every request. Always returns "Internal Server Error".
+• Error: Used let in inner blocks — creates new scoped variable, outer variable never reassigned
+  Consequence if left: Filter never takes effect. Always returns all notifications regardless of filter.
+• Fix: Declare let once, assign without let inside branches
+
+PATCH /api/notifications/:id/read:
+• Copy-pasted from capsules toggle route but with wrong table references
+• Error: SELECT * FROM capsules instead of notifications — wrong table
+  Consequence if left: "no such column" or wrong data queried. Route returns wrong data or crashes.
+• Error: Used notification.ownerId — notifications have userId, not ownerId
+• Error: Used parseCapsule() helper on notifications — parses JSON fields that don't exist
+• Fix: Correct table references, use proper column names, remove parseCapsule()
+
+Frontend Notification Integration:
+• Removed localStorage loading from loadFromStorage() in app.js
+• Added API fetch in initializeCapsules() — loads unread notifications on page load
+• Error: Used let notifications = [] inside loadFromStorage — shadowed global variable
+  Consequence if left: Global notifications stays as old localStorage data. API fetch results never used.
+• Fix: notifications = [] without let to reassign global
+• markNotificationRead() — converted to async, calls PATCH /api/notifications/:id/read
+• markAllNotificationsRead() — loops through notifications, calls markNotificationRead for each
+• Error: Typos — markNotificationsRead (missing 'ion'), .notification-tab (singular instead of plural)
+  Consequence if left: Function call fails silently. Tab selector never matches, UI never refreshes.
+• Fix: Correct function name, fix selector to .notifications-tab (plural)
+
+Activity Log Table + Routes:
+• Added CREATE TABLE IF NOT EXISTS activity_log (id, userId, type, details, timestamp)
+• Error: Table name had space "activity log" — SQL syntax error
+  Consequence if left: "SQLITE_ERROR: near log" — table creation fails entirely.
+• Error: Column name typo "detials" instead of "details"
+  Consequence if left: INSERT fails because column name doesn't match — "no such column: details"
+• Fix: Use underscore activity_log, fix typo to details
+
+GET /api/activity:
+• Admin check first, returns all activity ordered by timestamp DESC
+• Non-admins see only their own activity filtered by userId
+• Error: Broken SQL mixing subqueries — WHERE userId = ? AND IsAdmin FROM users WHERE id = ?
+  Consequence if left: "SQLITE_ERROR: near FROM" — 500 error on every request.
+• Error: activity.userId check on array — .all() returns array, not single object
+• Fix: Simple admin check with req.user.isAdmin, clean SELECT with ORDER BY
+
+POST /api/activity:
+• Creates activity log entry with userId, type, details
+• Error: Typo "detials" in validation check — variable name mismatch
+  Consequence if left: !detials is always true (undefined). Route always returns "Type and Details are required". Activity never logged.
+• Fix: Use correct variable name details
+
+GET /api/admin/users:
+• Admin-only, returns all users excluding password field
+• Error: Missing leading / in route path — "api/admin/users" instead of "/api/admin/users"
+  Consequence if left: Route never matches. Always returns 404. Admin dashboard shows no data.
+• Error: Missing .all() on prepared statement — db.prepare() creates the statement but never runs it
+  Consequence if left: Returns a Statement object instead of data. JSON serialization either fails or returns empty.
+• Fix: Leading / and .all() to execute query
+
+Frontend Admin Connection:
+• showAdminDashboard() made async — fetches user list from API on open
+• Users, capsules, activity counts now show live server data
+
+Learned: AUTOINCREMENT is one word. SQL table names can't have spaces. .all() must be called to execute prepared statements. Route paths must always start with /. Variable scoping in if/else blocks — let/const are block-scoped.
+
+Admin Backend Routes (Day 3 cont. — 22 June 2026):
+─────────────────────────────────────────────
+
+deleted_users + deleted_capsules Tables:
+• Added to schema after users and capsules respectively
+• deleted_users: id, userId, username, reason, deletedBy, capsuleCount, accountAge, deletedAt
+• deleted_capsules: id, capsuleId, capsuleTitle, ownerId, ownerUsername, deletedBy, reason, deletedAt
+• Mirror the pattern set by bans, activity_log, notifications tables
+
+DELETE /api/admin/users/:id:
+• Admin-only check using req.user.isAdmin
+• Looks up user by req.params.id, returns 404 if not found
+• Error: Used userId from req.body instead of req.params.id — endpoint never matched the URL param
+  Consequence if left: Always returns "UserId is required" or deletes wrong user. All admin delete operations fail silently.
+• Error: Const deleted createdAt with separate query — already had existing.createdAt from the user lookup
+  Consequence if left: Redundant DB query. Works but wastes a round-trip for data we already have.
+• Error: INSERT syntax with = signs (userId = ?) instead of standard SQL (userId)
+  Consequence if left: "SQLITE_ERROR: near =" — INSERT fails, user deleted without audit trail.
+• Error: accountAge = new Date() - createdAt — subtracting string from Date gives NaN
+  Consequence if left: accountAge stores NaN or invalid value in deleted_users table.
+• Error: DELETE FROM users WHERE userId = ? — column is id, not userId
+  Consequence if left: "no such column: userId" — user never deleted from users table.
+• Fix: req.params.id for URL param, use existing.createdAt, correct INSERT syntax, compute age properly, use WHERE id = ?
+
+DELETE /api/admin/capsules/:id:
+• Admin-only, deletes a specific capsule and logs to deleted_capsules
+• Inserts notification for capsule owner + activity log entry
+• Error: Used ownerId and title to match the DELETE instead of capsule id
+  Consequence if left: Deletes ALL capsules with matching title for that user instead of just the one capsule.
+• Fix: WHERE id = ? with capsuleId from params
+• Error: ownerId not in SELECT statement — existing.ownerId used but never selected
+  Consequence if left: existing.ownerId is undefined — notification goes to wrong user or crashes.
+• Fix: Add ownerId to SELECT
+
+GET /api/admin/stats:
+• Returns totalUsers, totalCapsules, lockedCapsules, deletedUsersCount
+• Error: No admin access check — any authenticated user could see stats
+  Consequence if left: Regular users see sensitive admin statistics.
+• Error: Used .all() instead of .get() — .all() returns array [{COUNT(*): 5}], .count is undefined
+  Consequence if left: Stats display as undefined/0 in admin dashboard.
+• Error: No AS alias on COUNT(*) — .get() returns {"COUNT(*)": 5}, .count property is undefined
+  Consequence if left: Same as above — all stats show as undefined.
+• Fix: Add admin check, use .get() with AS count, access .count
+
+GET /api/admin/deleted-users:
+• Returns all deleted_users records ordered by deletedAt DESC
+• Error: Used COUNT(*) instead of SELECT * — returned a number instead of the actual records
+  Consequence if left: Deleted Users tab in admin shows nothing useful — just a count.
+• Fix: SELECT * ... .all() to return the full list
+
+GET /api/admin/capsules:
+• Returns all capsules ordered by createdAt DESC with parsed JSON fields
+• Error: safeJsonParse(capsules_raw) on entire array — safeJsonParse expects a string, not an array
+  Consequence if left: Each capsule's tags/allowedUsers remain as JSON strings instead of parsed arrays.
+
+GET /api/admin/bans:
+• Returns all ban records ordered by createdAt DESC
+• Error: Typo "erro" instead of "error" in response — frontend error handler misses the message
+  Consequence if left: Toast/error display shows undefined instead of "Access denied".
+• Fix: Correct typo to "error"
+
+Frontend Admin Connection:
+• showAdminDashboard() — now fetches users + stats via Promise.all([api.get(), api.get()])
+• Stats cards: replaced localStorage globals (capsules?.length, deletedUsers?.length) with API response (stats.totalUsers, stats.totalCapsules, etc.)
+• switchSimpleTab() — made async, fetches capsules/deleted-users/activity/bans from API per tab, shows spinner while loading
+• renderAllCapsules(capsulesData) — accepts optional data param from API, falls back to global array
+• renderDeletedUsers(deletedData) — same pattern
+• renderAdminActivityLog(activityData) — same pattern
+• renderBanHistory(bansData) — maps API ban records to display format (looks up username from users array, computes active/duration)
+• deleteUser(userId, reason) — async, calls api.delete() instead of modifying global arrays + saveToStorage()
+• adminDeleteCapsule(capsuleId) — async, calls api.delete() instead of localStorage logic
+• api.delete(url, body) — added optional body parameter for DELETE requests (needed for admin delete with reason)
+
+saveToStorage() Cleanup:
+• Emptied function body — prevents stale in-memory arrays from overwriting server data
+• App now relies entirely on API calls for fresh data
+• localStorage reads still work as fallback on initial page load
+
+Learned: DELETE routes get params from URL, not body. Use .get() for single-row queries. AS alias is required for computed columns. safeJsonParse is per-field, not for arrays. Always add admin checks to admin routes.
+
+Backend Hardening (Day 3 cont.):
+─────────────────────────
+
+Rate Limiting:
+• Installed express-rate-limit package
+• Global limiter: 100 requests per 15 minutes per IP
+• Returns JSON error "Too many requests, please try again later" when exceeded
+• Error: Typo msx instead of max — config option not recognized, rate limiting never applied
+  Consequence if left: All requests pass through unlimited. No protection against brute force or DDoS.
+• Fix: Correct to max
+
+CORS Lock:
+• Restrict origins to ['http://localhost:3000', 'https://magical-granita-e9f978.netlify.app']
+• Replaced permissive app.use(cors()) — previously allowed any domain
+• Error: Forgot to wrap domains in an array — only first origin works
+  Consequence if left: Second domain gets CORS errors on every request.
+• Fix: Proper array syntax with both origins
+
+Input Validation:
+• Signup: username min 3 chars, password min 6 chars
+• Error: Used HTTP 401 (Unauthorized) for validation errors — 401 implies authentication failed
+  Consequence if left: Frontend might show "Unauthorized" toast instead of "Username too short". Confusing UX.
+• Fix: Use 400 (Bad Request) for validation errors
+
+Global Error Handler:
+• Added app.use((err, req, res, next)) before app.listen()
+• Catches unhandled errors, logs stack trace, returns JSON 500
+• Prevents server crash on unexpected errors — always returns clean JSON response
+
+7. DSA Learning Journey (Java) — Task Scheduler
+Start Date: 22 June 2026
+Status: 🟡 In progress (Part 1: CRUD + ArrayList done)
+
+This section documents my Data Structures & Algorithms learning by building a Task Scheduler in Java from scratch — every bug, concept, and fix in real time.
+
+Project: Task Scheduler — A CLI tool to add, delete, complete, and schedule tasks.
+
+Day 1 — 22 June 2026
+─────────────────────
+
+Setup:
+• Created Task.java and Scheduler.java from scratch
+• No AI boilerplate — wrote every line myself
+
+Task Class:
+• Fields: id (int), title (String), priority (int), deadline (String), isCompleted (boolean)
+• Constructor using setters
+• Getters and setters for all fields
+
+ArrayList (Resizable Array):
+• ArrayList<Task> tasks = new ArrayList<>() — dynamic list that grows as tasks are added
+• add(task) — appends to end
+• get(index) — retrieves by position
+• remove(index) or remove(object) — deletes
+• size() — returns count
+• Error: Tried to remove by task ID as if IDs were ArrayList indices
+  Consequence if left: ArrayList indices start at 0, task IDs start at 1. tasks.remove(3) would try index 3 on a 3-element list (indices 0,1,2) — crashes with IndexOutOfBoundsException.
+• Fix: Loop through list, compare task.id field, then remove the matched object, not the index.
+
+Linear Search Algorithm:
+• Loop through ArrayList, check each task's .id field until match found
+• O(n) time — worst case checks every element
+• Used for: delete by ID, mark complete by ID
+
+For-Each Loop Bug:
+• Used for(Task task: tasks) loop and called tasks.remove(task) inside it
+  Consequence if left: ConcurrentModificationException — Java forbids modifying a list while iterating over it with for-each. Program crashes on every delete.
+• Fix: Switched to regular for(int i = 0; i < tasks.size(); i++) loop, then break after remove.
+
+Reference vs Value:
+• Task task = tasks.get(i) returns a reference to the actual object in the list
+• task.setIsCompleted(true) modifies the task directly — no need to "put it back" with tasks.set()
+• Error: Wrote tasks.set(loop, task) after modifying — redundant, object already updated
+
+Concepts Learned:
+• Classes/objects — constructor, fields, methods
+• ArrayList — dynamic array vs static array (fixed size, can't grow)
+• Linear search — simplest search algorithm
+• For-each vs indexed for loop — for-each is read-only, can't modify list
+• References — objects in Java are references, not copies
+• Scanner — handling nextInt() vs nextLine() quirks
+• Switch statements — basic menu flow
+
+8. Core Philosophy – Generalist Systems Architect
+"I collect perspectives from each field and apply them across others."
+
+Domains Touched
+Domain	Application
+Game dev	Escape room mechanics, guard patrol, lock‑picking
+Writing	60k word narrative, character arcs, emotional logic
+Backend	Node.js + Express + SQLite (full API — auth, capsules, bans, friends, notifications, activity, admin)
+Frontend	Complete web app (Time Capsule)
+Design	Figma for wireframing
+Learning theory	Fragment Method, Learn‑By‑Death
+Cyber security	Phishing detection, secure coding practices
+The Meta‑Skill
+Fragments are like atoms. Large systems break into smaller fragments. Learn the fragments, learn the system. This applies to code, stories, games, and biology.
