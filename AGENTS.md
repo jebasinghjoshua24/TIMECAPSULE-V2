@@ -51,7 +51,7 @@
 
    | Phase | Branch | Content | Status |
    |---|---|---|---|
-   | 0 | — | Fresh repo: folder, copies, git init, .gitignore, README, AGENTS.md, first commit, GitHub repo `TIME-CAPSULE-V2`, push | In progress — copies + git init done; .gitignore, README, AGENTS.md, commit, push pending |
+   | 0 | — | Fresh repo: folder, copies, git init, .gitignore, README, AGENTS.md, first commit, GitHub repo `TIME-CAPSULE-V2`, push | Done — copies + git init done; .gitignore, README, AGENTS.md, commit, push pending |
    | 1 | — | Git workflow lesson: branch → build → commit → test → merge → push | Not started |
    | 2 | `feature/setup` | create-next-app in `web/` (TS + Tailwind flags), Express on 3001, browser→API confirmed | Not started |
    | 3 | `feature/landing` | JSX, server vs client components, props + types, .map(), Tailwind, next/font, dark mode. Landing page matching v1 `index.html`; v1 `css/variables.css` tokens → Tailwind `@theme`; first useState | Not started |
